@@ -44,6 +44,7 @@ class LoginActivity : AppCompatActivity() {
             val password = findViewById<EditText>(R.id.editTextPassword).text.toString()
             auth.signInWithEmailAndPassword(mail, password)
                 .addOnSuccessListener {
+                    setUser()
                     startActivity(Intent(this, CatalogActivity::class.java))
                 }
                 .addOnFailureListener {
